@@ -1,11 +1,24 @@
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Hello from Cloudflare pages
-        </p>
-      </div>
-    </main>
-  )
+import Table from '@/app/components/Table';
+import {GetCoinListResponse} from '@/model/get-coin-list';
+
+type Props = {
+    params: {},
+    searchParams: { [key: string]: string | string[] | undefined },
+}
+
+async function getCoins(page: string): Promise<GetCoinListResponse> {
+    const res: Response = await fetch(`https://coincheckup.com/api/coincheckup/get_coin_list?order_by=last_market_cap_usd&order_direction=desc&limit=100&offset=${page}`);
+    return res.json();
+}
+
+export default async function Home(props: Props) {
+    const page: string | string[] | undefined = props?.searchParams?.page;
+    const singlePage: string = page && typeof (page) === 'string' ? page : '';
+    const coinsResponse: GetCoinListResponse = await getCoins(singlePage || '1');
+
+    return (
+        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+            <Table coinList={coinsResponse.data}/>
+        </main>
+    );
 }
