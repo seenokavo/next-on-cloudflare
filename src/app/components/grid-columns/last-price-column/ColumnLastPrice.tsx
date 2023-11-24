@@ -23,7 +23,7 @@ export function ColumnLastPrice({lastPrice}: Props) {
 
     return (
         <div className={styles.container}>
-            <span>${formattedPrice}</span>
+            <span className={styles.price}>${formattedPrice}</span>
         </div>
     );
 }

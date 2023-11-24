@@ -13,8 +13,8 @@ export function ColumnSupply({supply1, supply2}: Props) {
 
     return (
         <div className={styles.container}>
-            <span>{formattedQuantity1}{postfix1}</span>
-            <span>{formattedQuantity2}{postfix2}</span>
+            <span className={styles.quantity}>{formattedQuantity1}{postfix1}</span>
+            <span className={styles.quantity}>{formattedQuantity2}{postfix2}</span>
         </div>
     );
 }
