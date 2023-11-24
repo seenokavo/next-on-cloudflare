@@ -24,7 +24,7 @@ export default function GridRow(props: Props) {
             <ColumnQuantity quantity={coin.last_market_cap_usd}/>
             <ColumnQuantity quantity={coin.volume_24_usd}/>
             <ColumnSupply supply1={coin.supply} supply2={coin.total_supply}/>
-            <ColumnChart symbol={coin.symbol}/>
+            {/*<ColumnChart symbol={coin.symbol}/>*/}
         </div>
     );
 }
