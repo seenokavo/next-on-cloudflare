@@ -6,7 +6,8 @@ import {ColumnLastPrice} from '@/app/components/grid-columns/last-price-column/C
 import {ColumnPriceChange} from '@/app/components/grid-columns/price-change-column/ColumnPriceChange';
 import {ColumnQuantity} from '@/app/components/grid-columns/quantity-column/ColumnQuantity';
 import {ColumnSupply} from '@/app/components/grid-columns/supply-column/ColumnSupply';
-import {ColumnChart} from '@/app/components/grid-columns/chart-column/ColumnChart';
+import {ColumnChartClient} from '@/app/components/grid-columns/chart-column/ColumnChartClient';
+// import {ColumnChart} from '@/app/components/grid-columns/chart-column/ColumnChart';
 
 interface Props {
     coinEntry: CoinListEntry;
@@ -24,7 +25,7 @@ export default function GridRow(props: Props) {
             <ColumnQuantity quantity={coin.last_market_cap_usd}/>
             <ColumnQuantity quantity={coin.volume_24_usd}/>
             <ColumnSupply supply1={coin.supply} supply2={coin.total_supply}/>
-            {/*<ColumnChart symbol={coin.symbol}/>*/}
+            <ColumnChartClient symbol={coin.symbol}/>
         </div>
     );
 }
