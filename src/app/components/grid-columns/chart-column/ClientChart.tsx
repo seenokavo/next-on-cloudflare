@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+
 import {SparkLineChart} from '@mui/x-charts';
 
 interface Props {
