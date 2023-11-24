@@ -10,7 +10,8 @@ interface Props {
 export default function Table(props: Props) {
     return (
         <div className={styles.container}>
-            {props.coinList.map((coin: CoinListEntry) => (<GridRow key={coin.symbol} coinEntry={coin}/>))}
+            {props.coinList.map((coin: CoinListEntry, index: number) =>
+                (<GridRow key={coin.symbol} index={index} coinEntry={coin}/>))}
         </div>
     );
 }

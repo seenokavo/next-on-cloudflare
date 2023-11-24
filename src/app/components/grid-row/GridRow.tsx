@@ -7,17 +7,19 @@ import {ColumnPriceChange} from '@/app/components/grid-columns/price-change-colu
 import {ColumnQuantity} from '@/app/components/grid-columns/quantity-column/ColumnQuantity';
 import {ColumnSupply} from '@/app/components/grid-columns/supply-column/ColumnSupply';
 import {ColumnChartClient} from '@/app/components/grid-columns/chart-column/ColumnChartClient';
+import {ColumnNum} from '@/app/components/grid-columns/num-column/ColumnNum';
+
 // import {ColumnChart} from '@/app/components/grid-columns/chart-column/ColumnChart';
 
 interface Props {
+    index: number;
     coinEntry: CoinListEntry;
 }
 
-export default function GridRow(props: Props) {
-    const coin: CoinListEntry = props.coinEntry;
-
+export default function GridRow({coinEntry: coin, index}: Props) {
     return (
         <div className={styles.row}>
+            <ColumnNum index={index}/>
             <ColumnName symbol={coin.symbol} displaySymbol={coin.display_symbol} imageId={coin.image_id}/>
             <ColumnLastPrice lastPrice={coin.last_price_usd}/>
             <ColumnPriceChange priceChange={coin.price_change_1D_percent}/>
