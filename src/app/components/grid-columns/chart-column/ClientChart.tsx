@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-// import {SparkLineChart} from '@mui/x-charts';
+import {SparkLineChart} from '@mui/x-charts';
 
 interface Props {
     data: [number, number][];
@@ -16,8 +16,7 @@ export function ClientChart({data, color}: Props) {
     const targetColor = color === 'red' ? red : green;
     return (
         <div>
-            {/*<SparkLineChart data={data.map(d => d[1])} width={140} height={40} colors={[targetColor]}/>*/}
-            TEST
+            <SparkLineChart data={data.map(d => d[1])} width={140} height={40} colors={[targetColor]}/>
         </div>
     );
 }
