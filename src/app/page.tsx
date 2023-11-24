@@ -1,5 +1,6 @@
 import Table from '@/app/components/Table';
 import {GetCoinListResponse} from '@/model/get-coin-list';
+import styles from './Page.module.css';
 
 type Props = {
     params: {},
@@ -17,7 +18,8 @@ export default async function Home(props: Props) {
     const coinsResponse: GetCoinListResponse = await getCoins(singlePage || '1');
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        // <main className="flex min-h-screen flex-col items-center justify-between pl-28 pr-28">
+        <main className={styles.container}>
             <Table coinList={coinsResponse.data}/>
         </main>
     );
