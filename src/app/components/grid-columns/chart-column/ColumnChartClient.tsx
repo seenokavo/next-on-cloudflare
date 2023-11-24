@@ -14,7 +14,7 @@ interface State {
     isPositive: boolean;
 }
 
-export async function ColumnChartClient({symbol}: Props) {
+export function ColumnChartClient({symbol}: Props) {
     const [state, setState] = useState<State>({
         series: [],
         isPositive: false
@@ -28,8 +28,7 @@ export async function ColumnChartClient({symbol}: Props) {
 
             setState({series, isPositive});
         })();
-    });
-
+    }, [symbol]);
 
     return (
         <div className={styles.container}>
