@@ -2,6 +2,8 @@ import Table from '@/app/components/Table';
 import {GetCoinListResponse} from '@/model/get-coin-list';
 import styles from './Page.module.css';
 
+export const runtime = 'edge';
+
 type Props = {
     params: {},
     searchParams: { [key: string]: string | string[] | undefined },
