@@ -10,8 +10,12 @@ interface Props {
 export default function Table(props: Props) {
     return (
         <div className={styles.container}>
-            {props.coinList.map((coin: CoinListEntry, index: number) =>
-                (<GridRow key={coin.symbol} index={index} coinEntry={coin}/>))}
+
+            {/*https://stackoverflow.com/questions/24284510/auto-adjust-perant-div-width-to-sum-of-its-children-width*/}
+            <div className={styles.rowsWrapper}>
+                {props.coinList.map((coin: CoinListEntry, index: number) =>
+                    (<GridRow key={coin.symbol} index={index} coinEntry={coin}/>))}
+            </div>
         </div>
     );
 }

@@ -1,8 +1,7 @@
 .container {
     padding-right: 10px;
-    -ms-flex: 0 0 190px;
-    flex: 0 0 190px;
-    padding-left: 10px;
+    -ms-flex: 0 0 80px;
+    flex: 0 0 80px;
     -ms-flex-pack: justify;
     justify-content: flex-start;
     align-items: center;
@@ -18,7 +17,7 @@
 }
 
 .anchor {
-    padding-left: 18px;
+    padding-left: 8px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;

@@ -20,7 +20,6 @@ export default async function Home(props: Props) {
     const coinsResponse: GetCoinListResponse = await getCoins(singlePage || '1');
 
     return (
-        // <main className="flex min-h-screen flex-col items-center justify-between pl-28 pr-28">
         <main className={styles.container}>
             <Table coinList={coinsResponse.data}/>
         </main>

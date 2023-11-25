@@ -1,3 +1,13 @@
 .container {
     width: 100%;
 }
+
+.rowsWrapper {
+    width: 1100px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        overflow: scroll;
+    }
+}

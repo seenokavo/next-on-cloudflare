@@ -11,7 +11,6 @@ export function ColumnName({symbol, displaySymbol, imageId}: Props) {
 
     return (
         <div className={styles.container}>
-            <img width={30} height={30} src={imageUrl} alt={`Image of ${displaySymbol}`}/>
             <a className={styles.anchor}>
                 <span className={styles.displaySymbol}>{symbol}</span>
                 <span className={styles.displayName}>{displaySymbol}</span>
