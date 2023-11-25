@@ -2,6 +2,7 @@ import Table from '@/app/components/table/Table';
 import {GetCoinListResponse} from '@/model/get-coin-list';
 import styles from './Page.module.css';
 import {Title} from '@/app/components/title/Title';
+import {Paginator} from '@/app/components/paginator/Paginator';
 
 export const runtime = 'edge';
 
@@ -23,6 +24,10 @@ export default async function Home(props: Props) {
     return (
         <main className={styles.container}>
             <Title/>
+            <Paginator
+                numOfResults={coinsResponse.meta.results}
+                numOfPages={Math.ceil(coinsResponse.meta.results / 100)}
+                page={Number(singlePage || 1)}/>
             <Table coinList={coinsResponse.data}/>
         </main>
     );
