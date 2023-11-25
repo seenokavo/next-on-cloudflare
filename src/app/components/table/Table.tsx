@@ -6,6 +6,7 @@ import HeaderRow from '@/app/components/grid-columns/header-row/HeaderRow';
 
 interface Props {
     coinList: CoinListEntry[];
+    page: number;
 }
 
 export default function Table(props: Props) {
@@ -16,7 +17,7 @@ export default function Table(props: Props) {
             {/*https://stackoverflow.com/questions/24284510/auto-adjust-perant-div-width-to-sum-of-its-children-width*/}
             <div className={styles.rowsWrapper}>
                 {props.coinList.map((coin: CoinListEntry, index: number) =>
-                    (<GridRow key={coin.symbol} index={index} coinEntry={coin}/>))}
+                    (<GridRow key={coin.symbol} index={index} coinEntry={coin} page={props.page}/>))}
             </div>
         </div>
     );

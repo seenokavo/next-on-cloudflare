@@ -20,6 +20,7 @@ export default async function Home(props: Props) {
     const page: string | string[] | undefined = props?.searchParams?.page;
     const singlePage: string = page && typeof (page) === 'string' ? page : '';
     const coinsResponse: GetCoinListResponse = await getCoins(singlePage || '1');
+    const pageToPassDown = Number(singlePage || 1);
 
     return (
         <main className={styles.container}>
@@ -27,8 +28,8 @@ export default async function Home(props: Props) {
             <Paginator
                 numOfResults={coinsResponse.meta.results}
                 numOfPages={Math.ceil(coinsResponse.meta.results / 100)}
-                page={Number(singlePage || 1)}/>
-            <Table coinList={coinsResponse.data}/>
+                page={pageToPassDown}/>
+            <Table coinList={coinsResponse.data} page={pageToPassDown}/>
         </main>
     );
 }

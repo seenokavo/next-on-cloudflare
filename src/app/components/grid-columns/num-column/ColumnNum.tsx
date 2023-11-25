@@ -4,13 +4,16 @@ import {faCoffee} from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
     index: number;
+    page: number;
 }
 
-export function ColumnNum({index}: Props) {
+export function ColumnNum({index, page}: Props) {
+
+    const num = index + 1 + 100 * (page - 1);
 
     return (
         <div className={styles.container}>
-            {index + 1}
+            {num}
             <div className={styles.iconContainer}>
                 <FontAwesomeIcon icon={faCoffee} size={'2xs'}/>
             </div>

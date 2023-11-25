@@ -15,12 +15,13 @@ import {ColumnIcon} from '@/app/components/grid-columns/icon-column/ColumnIcon';
 interface Props {
     index: number;
     coinEntry: CoinListEntry;
+    page: number;
 }
 
-export default function GridRow({coinEntry: coin, index}: Props) {
+export default function GridRow({coinEntry: coin, index, page}: Props) {
     return (
         <div className={styles.row}>
-            <ColumnNum index={index}/>
+            <ColumnNum index={index} page={page}/>
             <ColumnIcon displaySymbol={coin.display_symbol} imageId={coin.image_id}/>
             <ColumnName symbol={coin.symbol} displaySymbol={coin.display_symbol} imageId={coin.image_id}/>
             <ColumnLastPrice lastPrice={coin.last_price_usd}/>
