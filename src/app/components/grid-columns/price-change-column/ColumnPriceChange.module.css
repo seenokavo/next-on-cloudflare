@@ -11,12 +11,12 @@
     align-items: center
 }
 
-@media only screen and (max-width: 809px) {
-    .container {
-        -ms-flex: 0 0 80px;
-        flex: 0 0 80px
-    }
-}
+/*@media only screen and (max-width: 809px) {*/
+/*    .container {*/
+/*        -ms-flex: 0 0 80px;*/
+/*        flex: 0 0 80px*/
+/*    }*/
+/*}*/
 
 .box {
     color: #fff;

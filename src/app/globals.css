@@ -1,20 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*@tailwind base;*/
+/*@tailwind components;*/
+/*@tailwind utilities;*/
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 214, 219, 220;
-}
+/*:root {*/
+/*  --foreground-rgb: 0, 0, 0;*/
+/*  --background-rgb: 214, 219, 220;*/
+/*}*/
 
-@media (prefers-color-scheme: dark) {
-  :root {
+/*@media (prefers-color-scheme: dark) {*/
+/*  :root {*/
+/*    --foreground-rgb: 255, 255, 255;*/
+/*    --background-rgb: 34, 34, 34;*/
+/*  }*/
+/*}*/
+
+:root { /*only dark*/
     --foreground-rgb: 255, 255, 255;
     --background-rgb: 34, 34, 34;
-  }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb))
+    color: rgb(var(--foreground-rgb));
+    background: rgb(var(--background-rgb))
+}
+
+a {
+    text-decoration: none;
+    color: unset;
 }

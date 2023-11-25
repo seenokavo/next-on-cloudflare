@@ -1,6 +1,8 @@
-import Table from '@/app/components/Table';
+import Table from '@/app/components/table/Table';
 import {GetCoinListResponse} from '@/model/get-coin-list';
 import styles from './Page.module.css';
+import {Title} from '@/app/components/title/Title';
+import {Paginator} from '@/app/components/paginator/Paginator';
 
 export const runtime = 'edge';
 
@@ -18,11 +20,16 @@ export default async function Home(props: Props) {
     const page: string | string[] | undefined = props?.searchParams?.page;
     const singlePage: string = page && typeof (page) === 'string' ? page : '';
     const coinsResponse: GetCoinListResponse = await getCoins(singlePage || '1');
+    const pageToPassDown = Number(singlePage || 1);
 
     return (
-        // <main className="flex min-h-screen flex-col items-center justify-between pl-28 pr-28">
         <main className={styles.container}>
-            <Table coinList={coinsResponse.data}/>
+            <Title/>
+            <Paginator
+                numOfResults={coinsResponse.meta.results}
+                numOfPages={Math.ceil(coinsResponse.meta.results / 100)}
+                page={pageToPassDown}/>
+            <Table coinList={coinsResponse.data} page={pageToPassDown}/>
         </main>
     );
 }

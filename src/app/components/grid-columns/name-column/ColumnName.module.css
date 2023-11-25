@@ -1,8 +1,7 @@
 .container {
     padding-right: 10px;
-    -ms-flex: 0 0 190px;
-    flex: 0 0 190px;
-    padding-left: 10px;
+    -ms-flex: 0 0 80px;
+    flex: 0 0 80px;
     -ms-flex-pack: justify;
     justify-content: flex-start;
     align-items: center;
@@ -10,15 +9,15 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
-    .container {
-        -ms-flex: 0 0 120px;
-        flex: 0 0 120px
-    }
-}
+/*@media only screen and (max-width: 600px) {*/
+/*    .container {*/
+/*        -ms-flex: 0 0 120px;*/
+/*        flex: 0 0 120px*/
+/*    }*/
+/*}*/
 
 .anchor {
-    padding-left: 18px;
+    padding-left: 8px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -50,8 +49,8 @@
 
 @media only screen and (max-width: 600px) {
     .anchor {
-        .displayName {
-            max-width: 65px
+        .displaySymbol {
+            max-width: 50px
         }
     }
 }
