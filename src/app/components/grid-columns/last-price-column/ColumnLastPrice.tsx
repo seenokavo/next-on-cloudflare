@@ -12,7 +12,8 @@ export function ColumnLastPrice({lastPrice}: Props) {
         return num.toFixed(8);
     }
 
-    function getFormattedPrice(lastPrice: number) {
+    function getFormattedPrice(lastPrice: number): string {
+        if (lastPrice === null || lastPrice === undefined) return '';
         if (lastPrice.toString().includes('e')) return formatENotation(lastPrice);
         if (lastPrice < 0.0001) return numeral(lastPrice).format('0.00000000');
         if (lastPrice < 0) return numeral(lastPrice).format('0.0000');

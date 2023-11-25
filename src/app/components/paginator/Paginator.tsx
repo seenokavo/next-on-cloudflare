@@ -9,17 +9,22 @@ interface Props {
 }
 
 export async function Paginator({page, numOfPages, numOfResults}: Props) {
+    const leftIcon = <FontAwesomeIcon icon={faChevronCircleLeft} size={'2xs'}/>;
+    const rightIcon = <FontAwesomeIcon icon={faChevronCircleRight} size={'2xs'}/>;
+
     return (
         <div className={styles.container}>
 
             <div className={styles.left}>
-                <a href={`?page=${page + -1}`}><FontAwesomeIcon icon={faChevronCircleLeft} size={'2xs'}/></a>
+                {page > 1 && <a href={`?page=${page - 1}`}>{leftIcon}</a>}
+                {/*{page < 2 && numOfPages && <a>{leftIcon}</a>}*/}
             </div>
 
             <span className={styles.pages}>Page {page} of {numOfPages}</span>
 
             <div className={styles.right}>
-                <a href={`?page=${page + 1}`}><FontAwesomeIcon icon={faChevronCircleRight} size={'2xs'}/></a>
+                {page < numOfPages && <a href={`?page=${page + 1}`}>{rightIcon}</a>}
+                {/*{page >= numOfPages && <a>{rightIcon}</a>}*/}
             </div>
 
             |
