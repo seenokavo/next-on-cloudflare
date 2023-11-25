@@ -28,9 +28,9 @@
     height: 14px;
     cursor: pointer;
     margin-top: 3px;
+}
 
-    &:hover {
-        font-weight: 700;
-        color: #de1066;
-    }
+.iconContainer:hover {
+    font-weight: 700;
+    color: #de1066;
 }
