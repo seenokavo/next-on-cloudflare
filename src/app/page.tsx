@@ -1,6 +1,7 @@
-import Table from '@/app/components/Table';
+import Table from '@/app/components/table/Table';
 import {GetCoinListResponse} from '@/model/get-coin-list';
 import styles from './Page.module.css';
+import {Title} from '@/app/components/title/Title';
 
 export const runtime = 'edge';
 
@@ -21,6 +22,7 @@ export default async function Home(props: Props) {
 
     return (
         <main className={styles.container}>
+            <Title/>
             <Table coinList={coinsResponse.data}/>
         </main>
     );
