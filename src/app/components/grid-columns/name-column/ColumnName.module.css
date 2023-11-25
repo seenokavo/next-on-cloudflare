@@ -9,12 +9,12 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
-    .container {
-        -ms-flex: 0 0 120px;
-        flex: 0 0 120px
-    }
-}
+/*@media only screen and (max-width: 600px) {*/
+/*    .container {*/
+/*        -ms-flex: 0 0 120px;*/
+/*        flex: 0 0 120px*/
+/*    }*/
+/*}*/
 
 .anchor {
     padding-left: 8px;

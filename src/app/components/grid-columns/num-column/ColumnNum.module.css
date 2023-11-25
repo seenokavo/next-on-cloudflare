@@ -16,12 +16,12 @@
     color: #969c9c;
 }
 
-@media only screen and (max-width: 600px) {
-    #coins_table .title .col.rank, #coins_table .coin .col.rank {
-        -ms-flex: 0 0 30px;
-        flex: 0 0 30px
-    }
-}
+/*@media only screen and (max-width: 600px) {*/
+/*    #coins_table .title .col.rank, #coins_table .coin .col.rank {*/
+/*        -ms-flex: 0 0 30px;*/
+/*        flex: 0 0 30px*/
+/*    }*/
+/*}*/
 
 .iconContainer {
     width: 14px;
