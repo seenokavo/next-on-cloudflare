@@ -1,4 +1,6 @@
-import ClientSidePostFetch from '@/app/blog/[id]/ClientSidePostFetch';
+import {Suspense} from 'react';
+import FetchPostWithDelay from '@/app/streaming-blog/[id]/FetchPostWithDelay';
+import Loading from '@/app/streaming-blog/[id]/loading';
 
 export const runtime = 'edge';
 
@@ -6,7 +8,7 @@ interface Props {
     params: { id: string };
 }
 
-export default function ArticlePage({params}: Props) {
+export default async function ArticlePage({params}: Props) {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
             <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -14,7 +16,9 @@ export default function ArticlePage({params}: Props) {
                     This is a blog page for [{params.id}]
                 </p>
 
-                <ClientSidePostFetch id={params.id}/>
+                <Suspense fallback={<Loading/>}>
+                    <FetchPostWithDelay id={params.id}/>
+                </Suspense>
             </div>
         </main>
     );
