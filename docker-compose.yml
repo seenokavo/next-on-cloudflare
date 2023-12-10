@@ -1,0 +1,19 @@
+version: '3'
+services:
+    app:
+        build: ./
+        command: npm run dev-pack
+        ports:
+            # - 8788:8788
+            - 3000:3000
+        environment:
+            - NODE_ENV=development
+            - CHOKIDAR_USEPOLLING=true
+            - WATCHPACK_POLLING=true
+            - CLIENT_CONTAINER=${CLIENT_CONTAINER}
+        volumes:
+            - ./:/app
+            - nodemodules:/app/node_modules
+
+volumes:
+    nodemodules: {}
