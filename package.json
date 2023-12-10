@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "dev-cf": "npx wrangler pages dev -- next dev --turbo",
+    "dev-cf": "npx wrangler pages dev --proxy 3000 -- next dev --turbo",
+    "docker-build": "docker build -t next-on-cloudflare .",
+    "docker-run": "docker run -p 8788:8788 -d next-on-cloudflare",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
